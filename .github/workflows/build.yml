@@ -36,5 +36,8 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
           IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit-hash }}-${{ steps.get-timestamp.outputs.timestamp }}
         run: |
+          echo "El ecr_registro es: $ECR_REGISTRY \n"
+          echo "El ecr_repo es: $ECR_REPOSITORY \n"
+          echo "El image_tag es: $IMAGE_TAG \n"
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
