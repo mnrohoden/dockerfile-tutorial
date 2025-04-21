@@ -1,5 +1,6 @@
 # Use official Node.js
-FROM node:20-alpine #Antes node:23.11.0
+FROM node:20-alpine
+# Antes node:23.11.0
 
 # Install yarn
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
